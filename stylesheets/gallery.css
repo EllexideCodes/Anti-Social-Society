@@ -21,7 +21,7 @@
   text-transform: uppercase;
 }
 
-#content,
+#gallproper,
 #gallery {
   position: absolute;
   left: 0;
@@ -32,16 +32,17 @@
   color: white;
 }
 
-#content {
+#gallery {
   top: 12em;
   transform: scale(0.8)
 }
 
-#gallery {
+#gallproper {
   top: 14.5em;
+  padding-bottom: 2em;
 }
 
-#gallery li {
+#gallproper li {
   list-style: none
 }
 

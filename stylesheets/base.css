@@ -46,9 +46,9 @@ body {
 }
 
 /* scrollbars */
-body::-webkit-scrollbar { width: 0.9vh; border-radius: 40px;} 
-body::-webkit-scrollbar-track { background-color: rgba(0,0,0,0.4)}
-body::-webkit-scrollbar-thumb { background-color: #ddd; border-radius: 40px; }
+#content::-webkit-scrollbar { width: 0.9vh; border-radius: 40px;} 
+#content::-webkit-scrollbar-track { background-color: rgba(0,0,0,0.4)}
+#content::-webkit-scrollbar-thumb { background-color: #ddd; border-radius: 40px; }
 
 /* text styles */
 a {

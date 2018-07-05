@@ -57,7 +57,7 @@ function searchName() {
   var input, filter, ul, li, a, i;
   input = document.getElementById('inpt_search');
   filter = input.value.toUpperCase();
-  ul = document.getElementById("gallery");
+  ul = document.getElementById("gallproper");
   li = ul.getElementsByTagName('li');
 
   // Loop through all list items, and hide those who don't match the search query
