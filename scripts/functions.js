@@ -1,4 +1,6 @@
 $(document).ready(() => {
+  var staff = ['aeri', 'tommy', 'alex', 'tim', 'angelo', 'em', 'emilina', 'tin', 'burberry', 'sock', 'john', 'gamerz', 'crimson', 'crim', 'mema', 'elle', 'kevin', 'dreams', 'josh', 'smelly', 'smelliot', 'elliot', 'coru', 'coruscate', 'senkan', 'richard', 'rom', 'romaniac', 'naugrim', 'holley', 'pup', 'friendly', 'naits', 'elle', 'ris', 'amy', 'driz', 'drizard', 'ju', 'juju', 'menma', 'crystal', 'nard', 'meggu', 'coffee', 'meg', 'harlie', 'harley', 'thrax', '2roses', 'roses', 'charmed'];
+
   $("#inpt_search").on('focus', function () {
     $(this).parent('label').addClass('active');
   });
@@ -26,8 +28,10 @@ $(document).ready(() => {
   $('#inputcmd').keypress((e) => {
     if (e.keyCode == 13) {
       console.log('Enter was hit!');
+      var staffname = $('#inputcmd').val().slice(10);
       var command = $('#inputcmd').val().toLowerCase();
-      if(command == "ass-staff") {
+      console.log(staffname);
+      if(command == `ass-staff-${staffname}` && staff.includes(staffname)) {
         $('#inputcmd').addClass('correct');
         $('#inputcmd').attr('placeholder', 'Access Granted');
         setTimeout(function(){ $('#lock').fadeOut('slow', 'swing'); }, 2000);
