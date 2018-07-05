@@ -1,6 +1,6 @@
 /* let's start */
-body {
-  overflow: hidden;
+body, html {
+  overflow: hidden !important;
 }
 
 #bounce {
