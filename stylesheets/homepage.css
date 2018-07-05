@@ -1,0 +1,77 @@
+/* let's start */
+#bounce {
+  position: absolute;
+  height: 5em;
+  width: 5.2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(4);
+  animation: boing 5s forwards;
+  pointer-events: none
+}
+
+#ass {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'A-SS';
+  font-size: 6em;
+  color: hotpink;
+  text-shadow: 0px 1px white, 1px 0px white, 0px -1px white, -1px 0px white;
+  text-transform: uppercase;
+  transform: translateY(-40%) scale(0);
+  animation: nyoom 1s forwards;
+  animation-delay: 3.25s;
+  pointer-events: none
+}
+
+#subtitle {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8em;
+  letter-spacing: .5em;
+  transform: translateY(-40%) scale(0);
+  animation: nyoom 1s forwards;
+  animation-delay: 3.25s;
+  pointer-events: none
+}
+
+/* keyframes */
+@keyframes nyoom {
+  100% {
+    transform: translateY(-40%) scale(1);
+  }
+}
+@keyframes boing { 
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  10% {
+    transform: translate(-50%, -50%) scale(4);
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(4);
+  }
+  22% {
+    transform: translate(-50%, -50%) scale(4) scaleX(1.1)
+  }
+  24% {
+    transform: translate(-50%, -50%) scale(4) scaleY(1.1)
+  }
+  28% {
+    transform: translate(-50%, -50%) scale(4);
+    top: 50%;
+  }
+  65%, 100% {
+    transform: translate(-50%,0) scale(3);
+    top: 15%;
+  }
+}
