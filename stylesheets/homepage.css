@@ -1,4 +1,8 @@
 /* let's start */
+body {
+  overflow: hidden;
+}
+
 #bounce {
   position: absolute;
   height: 5em;
