@@ -23,7 +23,23 @@ body, html {
 body {
   overflow: hidden;
   background: #290b29;
+  /*background: linear-gradient(180deg, #af3773, #1a4977);*/
 }
+
+/*#content::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://mmoexaminer.com/wp-content/uploads/2017/01/Overwatch-map.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.3;
+  -webkit-mask: -webkit-linear-gradient(-90deg, rgba(0,0,0,1), rgba(0,0,0,0));
+}*/
 
 #content {
   position: absolute;
@@ -32,6 +48,7 @@ body {
   right: 0;
   bottom: 0;
   overflow: auto;
+  /*background: rgba(255, 255, 255, 0.5);*/
 }
 
 .particles-js {

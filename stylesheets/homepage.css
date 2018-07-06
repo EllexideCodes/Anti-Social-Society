@@ -38,6 +38,7 @@ body, html {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
+ /* color: #383838;*/
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: .8em;
@@ -45,7 +46,8 @@ body, html {
   transform: translateY(-40%) scale(0);
   animation: nyoom 1s forwards;
   animation-delay: 3.25s;
-  pointer-events: none
+  pointer-events: none;
+  font-weight: bold;
 }
 
 /* keyframes */
