@@ -30,13 +30,13 @@ $(document).ready(()=> {
         url: uploadURL,
         contentType: "application/json",
         dataType: "json",
-        data: {
-          "content": "my message",
-          "encoding": "utf-8"
-        }
+        data: JSON.stringify({
+            "content": "aGVsbG8=",
+            "encoding": "utf-8"
+          })
       })
         .done(function( data ) {
-          console.log(data)
+          console.log( data );
         });
     } else if (e.keyCode == 13 && hitCount == 1) {
       console.log('Here\'s your access code');
