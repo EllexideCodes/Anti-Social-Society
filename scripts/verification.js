@@ -26,7 +26,7 @@ $(document).ready(()=> {
       obj.hello.accessCode = text;
       hitCount ++;
       $.ajax({
-        type: "POST",
+        type: "PUT",
         url: uploadURL,
         contentType: "application/json",
         dataType: "json",
