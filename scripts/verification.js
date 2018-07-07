@@ -30,7 +30,7 @@ $(document).ready(()=> {
 
       $.ajax({
         type: "PUT",
-        url:"https://api.github.com/repos/redemption23/trackerApp/contents/file.txt",
+        url:"https://api.github.com/repos/EllexideBot/Config-Files/contents/test-thing.json",
         contentType: "application/json",
         dataType: "json",
         data: {
