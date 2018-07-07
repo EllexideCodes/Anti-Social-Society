@@ -36,8 +36,8 @@ $(document).ready(()=> {
         data: {
             "message": "update login details",
             "committer": {
-              "name": "EllexideCodes",
-              "email": "ellexidecodes@gmail.com"
+              "name": "EllexideBot",
+              "email": "itsellesea@gmail.com"
             },
             "content": content,
             "sha": "8b137891791fe96927ad78e64b0aad7bded08bdc"
