@@ -2,7 +2,7 @@ $(document).ready(()=> {
 
 var obj;
 
-$.getJSON('test.json', function(data){
+$.getJSON('./scripts/test.json', function(data){
   obj = data;
 });
 
