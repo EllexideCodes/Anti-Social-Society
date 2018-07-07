@@ -19,7 +19,6 @@ $(document).ready(() => {
 
   $('.picture').click((event) => {
     var image = $(event.currentTarget).attr('image');
-    //var background = `background-image:url(${image})`;
   
     $('#gallery-overlay').fadeIn('fast', 'swing');
     $('#gallery-overlay img').attr('src',  image);
