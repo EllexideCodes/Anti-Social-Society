@@ -21,7 +21,7 @@ $(document).ready(()=> {
 
   //    var uploadURL ="https://api.github.com/repos/EllexideBot/Config-Files/git/blobs/8b137891791fe96927ad78e64b0aad7bded08bdc" + base64 + partOne + partTwo;
       var text = $('#inputcmd').val();
-      console.log(uploadURL);
+      // console.log(uploadURL);
 
       obj.hello.accessCode = text;
       hitCount ++;
