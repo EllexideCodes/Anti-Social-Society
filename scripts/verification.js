@@ -30,7 +30,10 @@ $(document).ready(()=> {
         url: uploadURL,
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(obj)
+        data: {
+          "content": "my message",
+          "encoding": "utf-8"
+        }
       })
         .done(function( data ) {
           console.log(data)
