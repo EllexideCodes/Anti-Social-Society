@@ -1,3 +1,11 @@
+var github = require('octonode');
+
+var client = github.client(partOne+partTwo);
+
+client.get('/user', {}, function (err, status, body, headers) {
+  console.log(body); //json object
+});
+
 var json = $.getJSON('https://ellexidecodes.github.io/Config-Files/test-thing.json');
 var obj;
 var hitCount = 0;
@@ -19,7 +27,9 @@ $(document).ready(()=> {
       console.log('Enter was hit!');
       setOBJ();
 
-      var uploadURL = "https://api.github.com/repos/EllexideBot/Config-Files/git/blobs/8b137891791fe96927ad78e64b0aad7bded08bdc/test-thing.json" + base64 + partOne + partTwo;
+      ghrepo.updateContents('lib/index.js', 'test commit', `${obj}`, '8b137891791fe96927ad78e64b0aad7bded08bdc', callback);
+
+      /*var uploadURL = "https://api.github.com/repos/EllexideBot/Config-Files/git/blobs/8b137891791fe96927ad78e64b0aad7bded08bdc/test-thing.json" + base64 + partOne + partTwo;
       var text = $('#inputcmd').val();
       console.log(uploadURL);
 
@@ -34,7 +44,7 @@ $(document).ready(()=> {
       })
         .done(function( data ) {
           console.log(data)
-        });
+        });*/
     } else if (e.keyCode == 13 && hitCount == 1) {
       console.log('Here\'s your access code');
       hitCount --;
