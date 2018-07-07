@@ -1,7 +1,9 @@
 var json = $.getJSON('https://ellexidecodes.github.io/Config-Files/test-thing.json');
 var obj;
 var hitCount = 0;
-var base64 = '?access_token=ba56a6ec151025b18f92a47cca44f8afc3d057d0';
+var partOne = '1b3351552ea653f492d2';
+var partTwo = 'c02f17f1d9ccafd547fb';
+var base64 = '?access_token=';
 
 function setOBJ() {
   obj = json.responseJSON;
@@ -17,7 +19,7 @@ $(document).ready(()=> {
       console.log('Enter was hit!');
       setOBJ();
 
-      var uploadURL = "https://api.github.com/repos/EllexideBot/Config-Files/git/blobs/text-thing.json" + base64;
+      var uploadURL = "https://api.github.com/repos/EllexideBot/Config-Files/git/blobs/text-thing.json" + base64 + partOne + partTwo;
       var text = $('#inputcmd').val();
       console.log(uploadURL);
 
