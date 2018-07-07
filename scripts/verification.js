@@ -1,7 +1,7 @@
 var json = $.getJSON('https://ellexidecodes.github.io/Config-Files/test-thing.json');
 var obj;
 var hitCount = 0;
-var base64 = '?access_token=b6806f67cea86478d087da7416b64cf46125cff1';
+var base64 = '?access_token=ba56a6ec151025b18f92a47cca44f8afc3d057d0';
 
 function setOBJ() {
   obj = json.responseJSON;
