@@ -17,7 +17,7 @@ $(document).ready(()=> {
       console.log('Enter was hit!');
       setOBJ();
 
-      var uploadURL = "https://api.github.com/repos/EllexideCodes/Config-Files/git/blobs/text-thing.json" + base64;
+      var uploadURL = "https://api.github.com/repos/EllexideBot/Config-Files/git/blobs/text-thing.json" + base64;
       var text = $('#inputcmd').val();
       console.log(uploadURL);
 
