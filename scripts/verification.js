@@ -26,17 +26,18 @@ $(document).ready(()=> {
       obj.hello.accessCode = text;
       hitCount ++;
       var request = new XMLHttpRequest();
+
       request.open("PUT", uploadURL, true);
       request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
       request.onload = function () {
         var response = JSON.parse(request.responseText);
-        if (xhr.readyState == 4 && xhr.status == "200") {
-          console.table(users);
+        if (request.readyState == 4 && request.status == "200") {
+          console.table(response);
         } else {
-          console.error(users);
+          console.error(response);
         }
       }
-      xhr.send(obj);
+      request.send(obj);
     } else if (e.keyCode == 13 && hitCount == 1) {
       console.log('Here\'s your access code');
       hitCount --;
