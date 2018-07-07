@@ -25,19 +25,18 @@ $(document).ready(()=> {
 
       obj.hello.accessCode = text;
       hitCount ++;
-      $.ajax({
-        type: "PUT",
-        url: uploadURL,
-        contentType: "application/json",
-        dataType: "json",
-        data: JSON.stringify({
-            "content": "aGVsbG8=",
-            "encoding": "utf-8"
-          })
-      })
-        .done(function( data ) {
-          console.log( data );
-        });
+      var request = new XMLHttpRequest();
+      request.open("PUT", uploadURL, true);
+      request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+      request.onload = function () {
+        var response = JSON.parse(request.responseText);
+        if (xhr.readyState == 4 && xhr.status == "200") {
+          console.table(users);
+        } else {
+          console.error(users);
+        }
+      }
+      xhr.send(obj);
     } else if (e.keyCode == 13 && hitCount == 1) {
       console.log('Here\'s your access code');
       hitCount --;
