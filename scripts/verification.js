@@ -1,20 +1,28 @@
+var json = $.getJSON('./scripts/test.json');
+var obj;
+var hitCount = 0;
+
+function setOBJ() {
+  obj = json.responseJSON;
+}
+
+
 $(document).ready(()=> {
 
-var obj;
-
-$.getJSON('./scripts/test.json', function(data){
-  obj = data;
-});
-
-console.log(obj);
+  setOBJ();
+  console.log(obj);
 
   $('#inputcmd').keypress((e) => {
-    if (e.keyCode == 13) {
+    if (e.keyCode == 13 && hitCount == 0) {
       console.log('Enter was hit!');
-      var uploadURL = "test.json";
+      setOBJ();
+
+      var uploadURL = "./scripts/test.json";
       var text = $('#inputcmd').val();
       console.log(uploadURL);
-      
+
+      obj.hello.accessCode = text;
+      hitCount ++;
       $.ajax({
         type: "POST",
         url: uploadURL,
@@ -25,6 +33,10 @@ console.log(obj);
         .done(function( data ) {
           console.log(data)
         });
+    } else if (e.keyCode == 13 && hitCount == 1) {
+      console.log('Here\'s your access code');
+      hitCount --;
+      console.log(obj.hello.accessCode);
     }
   });
 
