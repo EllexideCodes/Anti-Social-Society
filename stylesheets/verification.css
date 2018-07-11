@@ -26,9 +26,8 @@
   -webkit-mask: -webkit-linear-gradient(-90deg, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
-#lock::after {
-  content: '';
-  position: fixed;
+.overlay {
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
