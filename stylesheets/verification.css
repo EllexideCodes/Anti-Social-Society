@@ -8,11 +8,33 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(226deg, #427ea7, #6657b9, #5d46db, #4677db);
-background-size: 800% 800%;
-  -webkit-animation: verify 30s ease infinite;
-  -moz-animation: verify 30s ease infinite;
-  animation: verify 30s ease infinite;
+  background: linear-gradient(180deg, #af3773, #1a4977);
+}
+
+#lock::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://mmoexaminer.com/wp-content/uploads/2017/01/Overwatch-map.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.3;
+  -webkit-mask: -webkit-linear-gradient(-90deg, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+#lock::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  opacity: 0.5;
 }
 
 #bunny {
