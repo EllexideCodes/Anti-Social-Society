@@ -31,7 +31,7 @@ var trainee;
         
         console.log('calling');
         var result = await setStaff();
-        console.log(staff);
+        console.log(result);
         admin = staff.admin; 
         director = staff.director; 
         seniorOfficer = staff.seniorOfficer; 
