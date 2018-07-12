@@ -10,7 +10,8 @@ var trainee;
     async function setTiers() {
        
         // read staff JSON
-        staff = await fetch('/Anti-Social-Society/scripts/staff.json');
+        let response = await fetch('/Anti-Social-Society/scripts/staff.json');
+        staff = await response.json();
         
         // set the tiers
         admin = staff.admin;
