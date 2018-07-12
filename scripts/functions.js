@@ -58,12 +58,12 @@ var allowedAccess;
   $('#inputcmd').keypress((e) => {
     if (e.keyCode == 13) {
       console.log('Enter was hit!');
-      var staffname = $('#inputcmd').val().slice(10);
+      var staffname = $('#inputcmd').val().slice(10).toLowerCase();
       var command = $('#inputcmd').val().toLowerCase();
       console.log(staffname);
       if(command == `ass-staff-${staffname}` && allowedAccess.includes(staffname)) {
         $('#inputcmd').addClass('correct');
-        $('#inputcmd').attr('placeholder', 'Access Granted');
+        $('#inputcmd').attr('placeholder', `welcome, ${staffname}`);
         setTimeout(function(){ $('#lock').fadeOut('slow', 'swing'); }, 2000);
       } else {
         $('#inputcmd').addClass('error');
