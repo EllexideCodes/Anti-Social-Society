@@ -24,6 +24,7 @@ var trainee;
             return json;
         })();
           }, 2000);
+          resolve(staff);
       });
   }
     
