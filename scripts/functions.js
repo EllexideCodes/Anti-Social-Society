@@ -10,7 +10,7 @@ var trainee;
   function setStaff() {
       return new Promise(resolve => {
           setTimeout(() => {
-            staff = ( function() {
+            resolve(staff = ( function() {
             var json = null;
             $.ajax({
                 'async': false,
@@ -22,9 +22,9 @@ var trainee;
                 }
             });
             return json;
-        })();
+        })());
           }, 2000);
-          resolve(staff);
+          
       });
   }
     
