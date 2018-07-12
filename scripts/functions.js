@@ -68,7 +68,7 @@ var allowedAccess;
       } else {
         $('#inputcmd').addClass('error');
         setTimeout(function(){ $('#inputcmd').removeClass('error'); }, 1000);
-        $('#inputcmd').attr('placeholder', 'Wrong Access Code');
+        $('#inputcmd').attr('placeholder', `unauthorized access, ${staffname}`);
       }
       $('#inputcmd').val("");
       $('#inputcmd').blur();
