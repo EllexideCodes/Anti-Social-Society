@@ -7,38 +7,22 @@ var officer;
 var moderator;
 var trainee;
     
-  function setStaff() {
-      return new Promise(resolve => {
-          setTimeout(() => {
-            resolve(staff = ( function() {
-            var json = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': "/Anti-Social-Society/scripts/staff.json",
-                'dataType': "json",
-                'success': function(data) {
-                    json = data;
-                }
-            });
-            return json;
-        })());
-          }, 2000);
-          
-      });
-  }
-    
     async function setTiers() {
+       
+        // read staff JSON
+        staff = await fetch('/Anti-Social-Society/scripts/staff.json');
         
-        console.log('calling');
-        var result = await setStaff();
-        console.log(result);
-        admin = staff.admin; 
-        director = staff.director; 
-        seniorOfficer = staff.seniorOfficer; 
+        // set the tiers
+        admin = staff.admin;
+        director = staff.director;
+        seniorOfficer = staff.seniorOfficer;
         officer = staff.officer;
         moderator = staff.moderator;
         trainee = staff.trainee;
+        
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        console.log(staff);
     }
     
     setTiers();
