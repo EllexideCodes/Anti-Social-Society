@@ -1,6 +1,9 @@
-$(document).ready(() => {
-  var staff = ['aeri', 'tommy', 'alex', 'tim', 'angelo', 'em', 'emilina', 'tin', 'burberry', 'sock', 'john', 'gamerz', 'crimson', 'crim', 'mema', 'elle', 'kevin', 'dreams', 'josh', 'smelly', 'smelliot', 'elliot', 'coru', 'coruscate', 'senkan', 'richard', 'rom', 'romaniac', 'naugrim', 'holley', 'pup', 'friendly', 'naits', 'ris', 'amy', 'driz', 'drizard', 'ju', 'juju', 'menma', 'crystal', 'nard', 'meggu', 'coffee', 'meg', 'harlie', 'harley', 'thrax', '2roses', 'roses', 'charmed'];
+var staff = require('./staff.json');
 
+$(document).ready(() => {
+
+  console.log(staff);
+  
   $("#inpt_search").on('focus', function () {
     $(this).parent('label').addClass('active');
   });
