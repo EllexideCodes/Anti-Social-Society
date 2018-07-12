@@ -68,7 +68,7 @@ var allowedAccess;
       } else {
         $('#inputcmd').addClass('error');
         setTimeout(function(){ $('#inputcmd').removeClass('error'); }, 1000);
-        $('#inputcmd').attr('placeholder', `unauthorized access, ${staffname}`);
+        $('#inputcmd').attr('placeholder', `unauthorized access`);
       }
       $('#inputcmd').val("");
       $('#inputcmd').blur();
