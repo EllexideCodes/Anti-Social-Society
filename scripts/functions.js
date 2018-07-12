@@ -15,7 +15,7 @@ var trainee;
             $.ajax({
                 'async': false,
                 'global': false,
-                'url': "/staff.json",
+                'url': "/Anti-Social-Society/scripts/staff.json",
                 'dataType': "json",
                 'success': function(data) {
                     json = data;
