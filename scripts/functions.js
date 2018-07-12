@@ -6,8 +6,9 @@ var seniorOfficer;
 var officer;
 var moderator;
 var trainee;
+var allowedAccess;
     
-    async function setTiers() {
+    async function setPerms() {
        
         // read staff JSON
         let response = await fetch('/Anti-Social-Society/scripts/staff.json');
@@ -21,12 +22,15 @@ var trainee;
         moderator = staff.moderator;
         trainee = staff.trainee;
         
+        // set access
+        allowedAccess = admin.concat(director);
+            
         await new Promise(resolve => setTimeout(resolve, 2000));
         
-        console.log(staff);
+        console.log(allowedAccess);
     }
     
-    setTiers();
+    setPerms();
   
   $("#inpt_search").on('focus', function () {
     $(this).parent('label').addClass('active');
@@ -57,7 +61,7 @@ var trainee;
       var staffname = $('#inputcmd').val().slice(10);
       var command = $('#inputcmd').val().toLowerCase();
       console.log(staffname);
-      if(command == `ass-staff-${staffname}` && staff.includes(staffname)) {
+      if(command == `ass-staff-${staffname}` && allowedAccess.includes(staffname)) {
         $('#inputcmd').addClass('correct');
         $('#inputcmd').attr('placeholder', 'Access Granted');
         setTimeout(function(){ $('#lock').fadeOut('slow', 'swing'); }, 2000);
