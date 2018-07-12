@@ -10,18 +10,18 @@ var trainee;
   function setStaff() {
       return new Promise(resolve => {
           setTimeout(() => {
-            staff = await ( function() {
-            var staff = null;
+            staff = ( function() {
+            var json = null;
             $.ajax({
                 'async': false,
                 'global': false,
                 'url': "/staff.json",
                 'dataType': "json",
                 'success': function(data) {
-                    staff = data;
+                    json = data;
                 }
             });
-            return staff;
+            return json;
         })();
           }, 2000);
       });
