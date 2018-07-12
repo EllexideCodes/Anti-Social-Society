@@ -1,17 +1,3 @@
-var staff = ( function() {
-    var staff = null;
-    $.ajax({
-      'async': false,
-      'global': false,
-      'url': "/staff.json",
-      'dataType': "json",
-      'success': function(data) {
-        staff = data;
-      }
-    });
-  return staff;
-})();
-
 $(document).ready(() => {
 var staff;
 var admin;
