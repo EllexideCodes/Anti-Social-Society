@@ -1,20 +1,60 @@
 var staff = ( function() {
-    var json = null;
+    var staff = null;
     $.ajax({
       'async': false,
       'global': false,
       'url': "/staff.json",
       'dataType': "json",
       'success': function(data) {
-        json = data;
+        staff = data;
       }
     });
-  return json;
+  return staff;
 })();
 
 $(document).ready(() => {
-
-  console.log(staff);
+var staff;
+var admin;
+var director;
+var seniorOfficer;
+var officer;
+var moderator;
+var trainee;
+    
+  function setStaff() {
+      return new Promise(resolve => {
+          setTimeout(() => {
+            staff = await ( function() {
+            var staff = null;
+            $.ajax({
+                'async': false,
+                'global': false,
+                'url': "/staff.json",
+                'dataType': "json",
+                'success': function(data) {
+                    staff = data;
+                }
+            });
+            return staff;
+        })();
+          }, 2000);
+      });
+  }
+    
+    async function setTiers() {
+        
+        console.log('calling');
+        var result = await setStaff();
+        console.log(staff);
+        admin = staff.admin; 
+        director = staff.director; 
+        seniorOfficer = staff.seniorOfficer; 
+        officer = staff.officer;
+        moderator = staff.moderator;
+        trainee = staff.trainee;
+    }
+    
+    setTiers();
   
   $("#inpt_search").on('focus', function () {
     $(this).parent('label').addClass('active');
