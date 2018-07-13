@@ -21,7 +21,7 @@
   background-image: url(https://mmoexaminer.com/wp-content/uploads/2017/01/Overwatch-map.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100%;
   opacity: 0.3;
   -webkit-mask: -webkit-linear-gradient(-90deg, rgba(0,0,0,1), rgba(0,0,0,0));
 }
@@ -102,5 +102,11 @@ input:focus { outline: none }
   50% {
     background-color: #ce5858;
     border-color: #ce5858;
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  #lock::before {
+    background-size: auto 100%;
   }
 }
