@@ -26,8 +26,6 @@ var allowedAccess;
         allowedAccess = admin.concat(director);
             
         await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        console.log(allowedAccess);
     }
     
     setPerms();
